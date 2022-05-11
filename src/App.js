@@ -1,6 +1,15 @@
 import React from "react";
 import Die from "./components/Die";
 export default function App() {
+  const allNewDice = () => {
+    const dice = [];
+    for (let i = 0; i < 10; i++) {
+      dice.push(Math.floor(Math.random() * 6) + 1);
+    }
+    return dice;
+  };
+  console.log(allNewDice());
+
   return (
     <main>
       <h1 className="title">Tenzi</h1>
