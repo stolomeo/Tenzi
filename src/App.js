@@ -21,12 +21,12 @@ export default function App() {
     setDice(createDice());
   };
 
-  const [dice, setDice] = useState(createDice());
+  const [dice, setDice] = useState(() => createDice());
 
   const toggleIsHeld = (id) => {
     setDice((oldDice) =>
       oldDice.map((die) => {
-        return id === die.id ? (die.isHeld = !die.isHeld) : die;
+        return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
       })
     );
   };
@@ -37,7 +37,7 @@ export default function App() {
         key={die.id}
         value={die.value}
         isHeld={die.isHeld}
-        onClick={() => toggleIsHeld(die.id)}
+        toggleIsHeld={() => toggleIsHeld(die.id)}
       />
     );
   });
