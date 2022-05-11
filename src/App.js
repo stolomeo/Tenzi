@@ -16,6 +16,10 @@ export default function App() {
     return newDice;
   };
 
+  const rollDice = () => {
+    setDice(createDice());
+  };
+
   const [dice, setDice] = useState(createDice());
 
   const diceElements = dice.map((die) => {
@@ -29,7 +33,7 @@ export default function App() {
         current value between rolls
       </p>
       <div className="dice-container">{diceElements}</div>
-      <button>Roll Dice</button>
+      <button onClick={rollDice}>Roll Dice</button>
     </main>
   );
 }
