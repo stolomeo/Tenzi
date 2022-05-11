@@ -6,6 +6,7 @@ export default function App() {
     return {
       id: nanoid(),
       value: Math.floor(Math.random() * 6) + 1,
+      isHeld: false,
     };
   };
   const createDice = () => {
@@ -22,8 +23,23 @@ export default function App() {
 
   const [dice, setDice] = useState(createDice());
 
+  const toggleIsHeld = (id) => {
+    setDice((oldDice) =>
+      oldDice.map((die) => {
+        return id === die.id ? (die.isHeld = !die.isHeld) : die;
+      })
+    );
+  };
+
   const diceElements = dice.map((die) => {
-    return <Die key={die.id} value={die.value} />;
+    return (
+      <Die
+        key={die.id}
+        value={die.value}
+        isHeld={die.isHeld}
+        onClick={() => toggleIsHeld(die.id)}
+      />
+    );
   });
   return (
     <main>
