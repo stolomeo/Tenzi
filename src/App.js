@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
+
 export default function App() {
+  const [tenzi, setTenzi] = useState(false);
+
   const generateDice = () => {
     return {
       id: nanoid(),
@@ -25,7 +28,7 @@ export default function App() {
     );
   };
 
-  const [dice, setDice] = useState(() => createDice());
+  const [dice, setDice] = useState(createDice());
 
   const toggleIsHeld = (id) => {
     setDice((oldDice) =>
@@ -34,6 +37,16 @@ export default function App() {
       })
     );
   };
+  useEffect(() => {
+    const allHeld = dice.every((die) => die.isHeld);
+    const firstVal = dice[0].value;
+    const allSameVal = dice.every((die) => die.value === firstVal);
+
+    if (allHeld && allSameVal) {
+      setTenzi(true);
+      console.log("You won!");
+    }
+  }, dice);
 
   const diceElements = dice.map((die) => {
     return (
