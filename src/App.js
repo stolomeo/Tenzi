@@ -50,7 +50,6 @@ export default function App() {
 
     if (allHeld && allSameVal) {
       setTenzi(true);
-      console.log("You won!");
     }
   }, [dice]);
 
@@ -70,7 +69,7 @@ export default function App() {
       <h1 className="title">Tenzi</h1>
       <p className="instructions">
         Roll until all dice are the same. Click each die to freeze it at its
-        current value between rolls
+        current value between rolls.
       </p>
       <div className="dice-container">{diceElements}</div>
       <button className="btn-roll" onClick={rollDice}>
