@@ -22,11 +22,16 @@ export default function App() {
   };
 
   const rollDice = () => {
-    setDice((oldDice) =>
-      oldDice.map((die) => {
-        return die.isHeld ? die : generateDice();
-      })
-    );
+    if (tenzi) {
+      setDice(createDice());
+      setTenzi(false);
+    } else {
+      setDice((oldDice) =>
+        oldDice.map((die) => {
+          return die.isHeld ? die : generateDice();
+        })
+      );
+    }
   };
 
   const [dice, setDice] = useState(createDice());

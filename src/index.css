@@ -43,5 +43,8 @@ main {
   cursor: pointer;
 }
 .die-num {
-  font-size: 2rem;
+  font-size: 3rem;
+}
+.dice-icons {
+  width: 100px;
 }
