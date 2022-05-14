@@ -18,7 +18,11 @@ export default function App() {
   };
 
   const rollDice = () => {
-    setDice(createDice());
+    setDice((oldDice) =>
+      oldDice.map((die) => {
+        return die.isHeld ? die : generateDice();
+      })
+    );
   };
 
   const [dice, setDice] = useState(() => createDice());
