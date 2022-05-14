@@ -73,7 +73,9 @@ export default function App() {
         current value between rolls
       </p>
       <div className="dice-container">{diceElements}</div>
-      <button onClick={rollDice}>{tenzi ? "New Game" : "Roll Dice"}</button>
+      <button className="btn-roll" onClick={rollDice}>
+        {tenzi ? "New Game" : "Roll Dice"}
+      </button>
     </main>
   );
 }

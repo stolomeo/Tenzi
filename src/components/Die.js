@@ -26,14 +26,13 @@ export default function Die(props) {
   }
   const newComponent = handleComponentSelection(props.value);
 
-  const styles = {
-    backgroundColor: props.isHeld ? "green" : "white",
-  };
   return (
-    <div className="die-face" style={styles} onClick={props.toggleIsHeld}>
-      <div className="die-num" key={props.id}>
-        {newComponent}
-      </div>
+    <div
+      className={props.isHeld ? "die-num-active" : "die-num"}
+      onClick={props.toggleIsHeld}
+      key={props.id}
+    >
+      {newComponent}
     </div>
   );
 }
