@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 50px;
-  background-color: darkgrey;
+  background-color: #0b2434;
   font-family: "karla", Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -27,19 +27,24 @@ main {
   gap: 40px;
   padding: 2rem;
 }
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .title {
   font-size: 2.5rem;
 }
 .instructions {
   font-size: 1.25em;
-  text-align: center;
   line-height: 1.5;
   width: 80%;
+  text-align: center;
 }
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 .die-num {
   color: #0b2434;
