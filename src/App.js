@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { generateDice, createDice } from "./components/Utils/Dice";
-import Die from "./components/Die";
 import Header from "./components/Header";
+import Die from "./components/Die";
+import Button from "./components/Button";
 import Confetti from "react-confetti";
 
 export default function App() {
@@ -21,7 +22,7 @@ export default function App() {
     }
   };
 
-  const toggleIsHeld = (id) => {
+  const holdDice = (id) => {
     setDice((oldDice) =>
       oldDice.map((die) => {
         return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
@@ -44,7 +45,7 @@ export default function App() {
         key={die.id}
         value={die.value}
         isHeld={die.isHeld}
-        toggleIsHeld={() => toggleIsHeld(die.id)}
+        holdDice={() => holdDice(die.id)}
       />
     );
   });
@@ -53,9 +54,7 @@ export default function App() {
       {tenzi && <Confetti />}
       <Header />
       <div className="dice-container">{diceElements}</div>
-      <button className="btn-roll" onClick={rollDice}>
-        {tenzi ? "New Game" : "Roll Dice"}
-      </button>
+      <Button tenzi={tenzi} rollDice={rollDice} />
     </main>
   );
 }

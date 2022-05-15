@@ -6,7 +6,7 @@ export default function Die(props) {
   return (
     <div
       className={props.isHeld ? "die-num-active" : "die-num"}
-      onClick={props.toggleIsHeld}
+      onClick={props.holdDice}
       key={props.id}
     >
       {newComponent}
