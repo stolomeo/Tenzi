@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { generateDice, createDice } from "./components/Utils/Dice";
 import Die from "./components/Die";
 import Header from "./components/Header";
-import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 
 export default function App() {
+  const [dice, setDice] = useState(createDice());
   const [tenzi, setTenzi] = useState(false);
-
-  const generateDice = () => {
-    return {
-      id: nanoid(),
-      value: Math.floor(Math.random() * 6) + 1,
-      isHeld: false,
-    };
-  };
-  const createDice = () => {
-    const newDice = [];
-    for (let i = 0; i < 10; i++) {
-      newDice.push(generateDice());
-    }
-    return newDice;
-  };
 
   const rollDice = () => {
     if (tenzi) {
@@ -35,8 +21,6 @@ export default function App() {
     }
   };
 
-  const [dice, setDice] = useState(createDice());
-
   const toggleIsHeld = (id) => {
     setDice((oldDice) =>
       oldDice.map((die) => {
@@ -44,11 +28,11 @@ export default function App() {
       })
     );
   };
+
   useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
     const firstVal = dice[0].value;
     const allSameVal = dice.every((die) => die.value === firstVal);
-
     if (allHeld && allSameVal) {
       setTenzi(true);
     }
