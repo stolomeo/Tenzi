@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { generateDice, createDice } from "./components/Utils/Dice";
+import { generateDice, createDice } from "./components/Utils/handleDice";
 import Header from "./components/Header";
 import Die from "./components/Die";
 import Button from "./components/Button";
