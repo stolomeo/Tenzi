@@ -1,10 +1,11 @@
 import React from "react";
+import "../scss/Header.scss";
 
 export default function Header() {
   return (
     <header>
-      <h1 className="title">Tenzi</h1>
-      <p className="instructions">
+      <h1>Tenzi</h1>
+      <p>
         Roll until all dice are the same. Click each die to freeze it at its
         current value between rolls.
       </p>

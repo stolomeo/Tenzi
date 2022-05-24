@@ -1,0 +1,21 @@
+.die {
+  color: #0b2434;
+  font-size: 60px;
+  text-shadow: 2px 2px 2px #00000033;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #0b2434d7;
+  }
+}
+.die-active {
+  color: #5035ff;
+  font-size: 60px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #4024f6;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

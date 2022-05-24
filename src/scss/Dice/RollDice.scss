@@ -1,0 +1,21 @@
+button {
+  height: 10vh;
+  width: 20vh;
+  background-color: hsl(248, 100%, 55%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  transition: 0.2s all;
+  &:hover {
+    cursor: pointer;
+    background-color: #5035ff;
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
+}
