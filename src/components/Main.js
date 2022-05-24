@@ -3,7 +3,6 @@ import { generateDice, createDice } from "./Utils/handleDice";
 import Die from "./Dice/Die";
 import RollDice from "./Dice/RollDice";
 import DiceContainer from "./Dice/DiceContainer";
-import "../scss/Main.scss";
 
 export default function Main({ tenzi, setTenzi }) {
   const [dice, setDice] = useState(createDice());
@@ -49,9 +48,9 @@ export default function Main({ tenzi, setTenzi }) {
     );
   });
   return (
-    <main>
+    <>
       <DiceContainer diceElements={diceElements} />
       <RollDice tenzi={tenzi} rollDice={rollDice} />
-    </main>
+    </>
   );
 }
