@@ -16,6 +16,8 @@ npm start
 ## Built with
 
 - [React](https://reactjs.org/)
+- [node-sass](https://www.npmjs.com/package/node-sass)
+- [styled-components](hhttps://www.npmjs.com/package/styled-components)
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [nanoid](https://www.npmjs.com/package/nanoid)
 - [react-confetti](https://www.npmjs.com/package/react-confetti)
