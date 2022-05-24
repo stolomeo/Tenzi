@@ -1,6 +1,6 @@
 .die {
   color: #0b2434;
-  font-size: 60px;
+  font-size: 75px;
   text-shadow: 2px 2px 2px #00000033;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -11,7 +11,7 @@
 }
 .die-active {
   color: #5035ff;
-  font-size: 60px;
+  font-size: 75px;
   transition: all 0.2s ease-in-out;
   &:hover {
     color: #4024f6;
