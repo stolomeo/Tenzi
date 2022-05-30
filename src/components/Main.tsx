@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { generateDice, createDice } from "./Utils/handleDice";
-import Die from "./Dice/Die";
-import RollDice from "./Dice/RollDice";
-import DiceContainer from "./Dice/DiceContainer";
+import { useState, useEffect } from "react";
+import { generateDice, createDice } from "./utils/handleDice";
+import Die from "./DiceContainer/Die";
+import RollDice from "./RollDice/RollDice";
+import DiceContainer from "./DiceContainer/DiceContainer";
 
-export default function Main({ tenzi, setTenzi }) {
+type Props = {
+  tenzi: boolean;
+  setTenzi: (tenzi: boolean) => void;
+};
+
+export default function Main({ tenzi, setTenzi }: Props) {
   const [dice, setDice] = useState(createDice());
 
   const rollDice = () => {
@@ -20,7 +25,7 @@ export default function Main({ tenzi, setTenzi }) {
     }
   };
 
-  const holdDice = (id) => {
+  const holdDice = (id: string) => {
     setDice((oldDice) =>
       oldDice.map((die) => {
         return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
@@ -35,7 +40,7 @@ export default function Main({ tenzi, setTenzi }) {
     if (allHeld && allSameVal) {
       setTenzi(true);
     }
-  }, [dice]);
+  }, [dice, setTenzi]);
 
   const diceElements = dice.map((die) => {
     return (

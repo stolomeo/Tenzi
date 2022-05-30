@@ -7,7 +7,7 @@ import {
   FaDiceSix,
 } from "react-icons/fa";
 
-export const handleComponentSelection = (value) => {
+export const handleComponentSelection = (value: number) => {
   if (value === 1) {
     return <FaDiceOne />;
   } else if (value === 2) {
