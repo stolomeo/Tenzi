@@ -7,8 +7,8 @@ A React app based on [this](https://ilovetenzi.com/product/tenzi-dice-game/) pop
 ## Getting started
 
 ```
-git clone https://github.com/stolomeo/Tenzi.git
-cd Tenzi
+git clone https://github.com/stolomeo/tenzi.git
+cd tenzi
 npm install
 npm start
 ```
@@ -17,7 +17,6 @@ npm start
 
 - [React](https://reactjs.org/)
 - [node-sass](https://www.npmjs.com/package/node-sass)
-- [styled-components](https://www.npmjs.com/package/styled-components)
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [nanoid](https://www.npmjs.com/package/nanoid)
 - [react-confetti](https://www.npmjs.com/package/react-confetti)
